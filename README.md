@@ -1,38 +1,49 @@
-# Pi-Harness 自定义皮肤模板
+# Pi-Harness Custom Skin Starter
 
-这是一个可交给 Codex 或 Pi 直接生成、完成后可被 Pi-Harness 导入的独立皮肤项目。
+<p align="center">
+  <a href="README.md">English</a> ·
+  <a href="README.zh-CN.md">简体中文</a> ·
+  <a href="README.zh-TW.md">繁體中文</a> ·
+  <a href="README.ja-JP.md">日本語</a> ·
+  <a href="README.ko-KR.md">한국어</a> ·
+  <a href="README.ru-RU.md">Русский</a> ·
+  <a href="README.fr-FR.md">Français</a> ·
+  <a href="README.de-DE.md">Deutsch</a>
+</p>
 
-## 最快使用方式
+This standalone skin project can be given to Codex or Pi for generation, then imported directly into [Pi-Harness](https://github.com/wangmiaozero/pi-harness).
 
-1. 使用本仓库作为模板，或下载并解压本仓库。
-2. 用 Codex 或 Pi 打开项目目录。
-3. 复制下面的提示词，把最后一行替换成你的主题需求后发送。
-4. AI 完成并校验后，在 Pi-Harness 中打开“设置 → 主题 → 导入皮肤”，选择项目目录。
+## Quick start
 
-## 一键复制提示词
+1. Use this repository as a template, or download and extract it.
+2. Open the project directory with Codex or Pi.
+3. Copy the prompt below, replace its final line with your preferred theme, and send it.
+4. After the AI finishes and validates the project, open **Settings → Theme → Import Skin** in Pi-Harness and select the project directory.
 
-点击代码块右上角的复制按钮：
+## Copy-and-run prompt
+
+Use the copy button in the upper-right corner of the code block:
 
 ```text
-请在当前项目中生成一套可直接导入 Pi-Harness 的完整自定义皮肤。
+Create a complete custom skin in the current project that can be imported directly into Pi-Harness.
 
-执行要求：
-1. 先完整阅读 AGENTS.md、SKIN_BRIEF.md、skin.schema.json 和 pi-harness-skin.json。
-2. 只修改当前皮肤项目，不要修改 Pi-Harness 主程序，也不要在项目外创建文件。
-3. 生成以下资源：
-   - assets/wallpaper.webp：16:9 应用壁纸，需保证半透明面板上的文字仍清晰可读。
-   - assets/portrait.webp：透明背景竖版角色图，四周保留安全边距；不需要角色时可以省略。
-   - assets/preview.webp：16:10 主题卡片预览图，必须准确反映最终皮肤效果。
-4. 根据图片同步完善 pi-harness-skin.json：设置唯一的 kebab-case id、名称、版本、明暗模式、资源相对路径和完整颜色令牌。
-5. 图片只能使用 PNG、JPEG 或 WebP，单个文件不得超过 12 MiB；禁止外部链接、SVG、CSS、JavaScript、HTML、字体和可执行文件。
-6. 完成后按 skin.schema.json 校验清单，检查全部资源存在且路径正确，并输出最终文件清单与校验结果。
+Requirements:
+1. First read AGENTS.md, SKIN_BRIEF.md, skin.schema.json, and pi-harness-skin.json in full.
+2. Modify only the current skin project. Do not modify the Pi-Harness application or create files outside this project.
+3. Generate these assets:
+   - assets/wallpaper.webp: a 16:9 application wallpaper that keeps text readable on translucent panels.
+   - assets/portrait.webp: a portrait-oriented character image with a transparent background and generous safe margins; omit it if the design has no character.
+   - assets/preview.webp: a 16:10 theme-card preview that accurately represents the final skin.
+4. Update pi-harness-skin.json to match the images: set a unique kebab-case id, name, version, light/dark appearance, relative asset paths, and a complete set of color tokens.
+5. Images must be PNG, JPEG, or WebP and each file must be smaller than 12 MiB. Do not use remote URLs, SVG, CSS, JavaScript, HTML, fonts, or executable files.
+6. When finished, validate the project against skin.schema.json, verify that every asset exists at the referenced path, and report the final file list and validation results.
 
-我的主题需求：雪中大明宫廷风格，朱红、墨黑与鎏金配色，人物为明代官员，庄重克制；不要现代建筑、霓虹灯、赛博朋克元素。
+My theme: a snow-covered Ming imperial court, using vermilion, ink black, and gilded gold, with a dignified and restrained Ming official; no modern buildings, neon lights, or cyberpunk elements.
 ```
 
-只需要改写最后一行“我的主题需求”。更详细的设计约束也可以直接填写到 `SKIN_BRIEF.md`。
+Only the final `My theme` line needs to be rewritten. You can also put more detailed design constraints in `SKIN_BRIEF.md`.
 
-## AI 应产出的文件
+## Expected output
 
 ```text
 pi-harness-skin.json
@@ -42,31 +53,31 @@ assets/
 └── preview.webp
 ```
 
-- `wallpaper.webp`：16:9 应用壁纸。
-- `portrait.webp`：透明背景竖版角色图，可选。
-- `preview.webp`：16:10 主题选择卡片预览图。
-- `pi-harness-skin.json`：皮肤元数据、资源路径和颜色令牌。
+- `wallpaper.webp`: 16:9 application wallpaper.
+- `portrait.webp`: optional portrait-oriented character image with a transparent background.
+- `preview.webp`: 16:10 theme-selection card preview.
+- `pi-harness-skin.json`: skin metadata, asset paths, and color tokens.
 
-## 导入皮肤
+## Import the skin
 
-1. 启动 Pi-Harness。
-2. 进入“设置 → 主题”。
-3. 点击“导入皮肤”。
-4. 选择包含 `pi-harness-skin.json` 的项目目录。
-5. 点击新增的自定义皮肤卡片启用。
+1. Start Pi-Harness.
+2. Open **Settings → Theme**.
+3. Click **Import Skin**.
+4. Select the project directory containing `pi-harness-skin.json`.
+5. Select the new custom skin card to enable it.
 
-## 更新皮肤
+## Update the skin
 
-保持 `pi-harness-skin.json` 中的 `id` 不变，修改图片、颜色或版本号后，再次导入同一项目目录。Pi-Harness 会安全替换已安装副本。
+Keep the `id` in `pi-harness-skin.json` unchanged. After updating images, colors, or the version number, import the same project directory again. Pi-Harness safely replaces the installed copy.
 
-## 清单示例
+## Manifest example
 
 ```json
 {
   "$schema": "./skin.schema.json",
   "schemaVersion": 1,
   "id": "my-custom-skin",
-  "name": "我的自定义皮肤",
+  "name": "My Custom Skin",
   "version": "1.0.0",
   "appearance": "dark",
   "assets": {
@@ -83,12 +94,12 @@ assets/
 }
 ```
 
-完整字段约束见 `skin.schema.json`。`id` 只能使用小写字母、数字和连字符；发布后不要修改，否则会被识别为另一套皮肤。
+See `skin.schema.json` for the complete field constraints. The `id` may contain only lowercase letters, numbers, and hyphens. Do not change it after publishing, or Pi-Harness will treat the result as a different skin.
 
-## 安全与资源限制
+## Security and asset limits
 
-- 仅支持项目内的 PNG、JPEG、WebP。
-- 单个图片不能超过 12 MiB。
-- 资源路径必须是相对路径，不能使用 `..`、绝对路径或指向项目外部的符号链接。
-- 不支持外部 CSS、JavaScript、SVG、HTML、字体和网络 URL。
-- Pi-Harness 只复制通过校验的清单与位图，不会执行皮肤项目中的代码。
+- Only PNG, JPEG, and WebP files inside the project are supported.
+- Each image must be smaller than 12 MiB.
+- Asset paths must be relative and cannot contain `..`, be absolute, or resolve through a symbolic link outside the project.
+- External CSS, JavaScript, SVG, HTML, fonts, and network URLs are not supported.
+- Pi-Harness copies only validated manifests and bitmap assets; it does not execute code from skin projects.
