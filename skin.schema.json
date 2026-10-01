@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pi-harness.local/schemas/skin-v1.json",
+  "title": "Pi-Harness Declarative Skin",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "id", "name", "version", "appearance", "tokens"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "id": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 64,
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "name": { "type": "string", "minLength": 1, "maxLength": 80 },
+    "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?$" },
+    "description": { "type": "string", "maxLength": 240 },
+    "author": { "type": "string", "maxLength": 80 },
+    "appearance": { "enum": ["dark", "light"] },
+    "assets": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "preview": { "$ref": "#/$defs/asset" },
+        "wallpaper": { "$ref": "#/$defs/asset" },
+        "portrait": { "$ref": "#/$defs/asset" }
+      }
+    },
+    "tokens": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "window": { "$ref": "#/$defs/color" },
+        "titlebar": { "$ref": "#/$defs/color" },
+        "sidebar": { "$ref": "#/$defs/color" },
+        "workspace": { "$ref": "#/$defs/color" },
+        "surface": { "$ref": "#/$defs/color" },
+        "surfaceRaised": { "$ref": "#/$defs/color" },
+        "hover": { "$ref": "#/$defs/color" },
+        "selected": { "$ref": "#/$defs/color" },
+        "textPrimary": { "$ref": "#/$defs/color" },
+        "textSecondary": { "$ref": "#/$defs/color" },
+        "textTertiary": { "$ref": "#/$defs/color" },
+        "accent": { "$ref": "#/$defs/color" },
+        "accentHover": { "$ref": "#/$defs/color" },
+        "accentActive": { "$ref": "#/$defs/color" },
+        "accentBorder": { "$ref": "#/$defs/color" },
+        "borderSubtle": { "$ref": "#/$defs/color" },
+        "borderDefault": { "$ref": "#/$defs/color" },
+        "borderStrong": { "$ref": "#/$defs/color" },
+        "controlBackground": { "$ref": "#/$defs/color" },
+        "controlBorder": { "$ref": "#/$defs/color" },
+        "controlBorderHover": { "$ref": "#/$defs/color" }
+      }
+    }
+  },
+  "$defs": {
+    "asset": {
+      "type": "string",
+      "maxLength": 256,
+      "pattern": "^(?![/\\\\])(?!.*(?:^|[/\\\\])\\.\\.(?:[/\\\\]|$)).+\\.(?:png|jpe?g|webp)$"
+    },
+    "color": {
+      "type": "string",
+      "maxLength": 96,
+      "pattern": "^(?:#[0-9a-fA-F]{3,8}|(?:rgb|rgba|hsl|hsla|oklch)\\([^;{}]+\\))$"
+    }
+  }
+}
