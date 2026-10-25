@@ -15,7 +15,7 @@
       "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
     },
     "name": { "type": "string", "minLength": 1, "maxLength": 80 },
-    "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?$" },
+    "version": { "type": "string", "maxLength": 32, "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?$" },
     "description": { "type": "string", "maxLength": 240 },
     "author": { "type": "string", "maxLength": 80 },
     "appearance": { "enum": ["dark", "light"] },
