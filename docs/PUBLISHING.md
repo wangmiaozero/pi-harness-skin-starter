@@ -10,12 +10,12 @@ node scripts/pack-check.mjs <pack-directory>
 Market installs only packages whose names match:
 
 ```text
-^@pi-harness/(theme|pet)-[a-z0-9][a-z0-9-]*$
+^@piharness/(theme|pet)-[a-z0-9][a-z0-9-]*$
 ```
 
 `@example/...` packages are for local checks. They are not official.
 
-Before publishing, the logged-in account must be allowed to publish `@pi-harness`. Check that with `npm whoami` and `npm access list packages @pi-harness`. Then, inside that one package directory:
+Before publishing, the logged-in account must be allowed to publish `@piharness`. Check that with `npm whoami` and `npm access list packages @piharness`. Then, inside that one package directory:
 
 ```bash
 npm publish --access public

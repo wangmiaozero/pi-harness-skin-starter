@@ -18,7 +18,7 @@ This repository holds two compatible protocols. Do not collapse them into one pa
 - Generated packs must stay valid under Theme Pack Protocol v1 or the existing pet-pack protocol.
 - A package is a main package unless `piHarness.partOf` names its main package. The main package lists those names in `piHarness.parts`. Do not invent a second marker or hardcode package names.
 - Do not add npm scripts or executable files to a generated pack.
-- `@pi-harness` in a generated name does not grant Market publishing rights.
+- `@piharness` in a generated name does not grant Market publishing rights.
 - Migrate with `scripts/migrate-skin.mjs`. Leave the source `pi-harness-skin.json` in place.
 
 ## Scope

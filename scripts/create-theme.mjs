@@ -13,7 +13,7 @@ const official = parsed.flags.has('official')
 const out = path.resolve(parsed.values.out ?? path.join(process.cwd(), `theme-${slug}`))
 const style = parsed.values.style ?? 'customTheme'
 if (!/^[A-Za-z][A-Za-z0-9]*$/.test(style)) throw new Error('Theme style id must match ^[A-Za-z][A-Za-z0-9]*$')
-const packageName = official ? `@pi-harness/theme-${slug}` : `@example/theme-${slug}`
+const packageName = official ? `@piharness/theme-${slug}` : `@example/theme-${slug}`
 await assertEmpty(out)
 const license = await readFile(path.join(root, 'LICENSE'))
 await mkdir(path.join(out, 'assets'), { recursive: true })
@@ -72,9 +72,9 @@ Independent theme pack. It does not depend on the Skin Starter directory.
 
 \`customTheme\` is a protocol-valid style id. Pi-Harness currently applies a market theme only when the variant id is an existing mascot style. Color tokens still belong to Skin Protocol v1 and are imported with \`pi-harness-skin.json\`.
 
-A package name under \`@pi-harness\` does not grant publish permission. Market accepts only:
+A package name under \`@piharness\` does not grant publish permission. Market accepts only:
 
-\`^@pi-harness/(theme|pet)-[a-z0-9][a-z0-9-]*$\`
+\`^@piharness/(theme|pet)-[a-z0-9][a-z0-9-]*$\`
 
 This package is ${official ? 'named for the official scope' : 'an example package and is not an official market package'}.
 `

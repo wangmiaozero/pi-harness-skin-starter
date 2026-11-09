@@ -11,7 +11,7 @@ if (!slug || !/^[a-z0-9][a-z0-9-]*$/.test(slug)) {
 }
 const official = parsed.flags.has('official')
 const out = path.resolve(parsed.values.out ?? path.join(process.cwd(), `pet-${slug}`))
-const packageName = official ? `@pi-harness/pet-${slug}` : `@example/pet-${slug}`
+const packageName = official ? `@piharness/pet-${slug}` : `@example/pet-${slug}`
 await assertEmpty(out)
 const license = await readFile(path.join(root, 'LICENSE'))
 const clips = ['idle', 'thinking', 'running', 'success']
@@ -63,7 +63,7 @@ await writeFile(
 Independent pet pack using pet-pack.json. Frames are \`<clip>_001.webp\`.
 
 This package is ${official ? 'named for the official scope' : 'an example package and is not an official market package'}.
-Publishing under \`@pi-harness\` requires scope permission. The template does not grant it.
+Publishing under \`@piharness\` requires scope permission. The template does not grant it.
 `
 )
 console.log(out)

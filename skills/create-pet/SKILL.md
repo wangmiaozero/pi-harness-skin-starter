@@ -7,7 +7,7 @@ description: Create an independent Pi-Harness pet npm package. Use when the user
 
 1. Read `AGENTS.md`. Do not edit the Pi-Harness application.
 2. Choose a kebab-case slug. The pet id inside `pet-pack.json` uses that slug. The default package name is `@example/pet-<slug>`.
-3. Use `--official` only when the user explicitly owns `@pi-harness`.
+3. Use `--official` only when the user explicitly owns `@piharness`.
 4. Run `node scripts/create-pet.mjs <slug> --out <new-directory>`.
 5. Replace the sample frames with real WebP files named `<clip>_001.webp`, `<clip>_002.webp`, and so on. Frame counts in the manifest must match the files.
 6. Keep `idle` and map `thinking`, `running`, and `success` in `agentStateMapping`.

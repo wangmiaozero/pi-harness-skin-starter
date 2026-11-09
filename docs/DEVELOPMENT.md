@@ -9,7 +9,7 @@ node scripts/create-theme.mjs my-theme --out ../my-theme
 node scripts/create-pet.mjs my-pet --out ../my-pet
 ```
 
-`--official` sets the package name to `@pi-harness/theme-<slug>` or `@pi-harness/pet-<slug>`. It does not log in and it does not grant the scope.
+`--official` sets the package name to `@piharness/theme-<slug>` or `@piharness/pet-<slug>`. It does not log in and it does not grant the scope.
 
 Convert a skin without editing it:
 

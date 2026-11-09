@@ -8,7 +8,7 @@ description: Prepare one Pi-Harness theme or pet package for a manual npm publis
 1. Run `node scripts/validate-pack.mjs <directory>`.
 2. Run `node scripts/pack-check.mjs <directory>`.
 3. If `marketEligible` is false, stop and say the package is not an official market name.
-4. Tell the user to run `npm whoami` and `npm access list packages @pi-harness` themselves. Do not ask for a token, password, or OTP.
+4. Tell the user to run `npm whoami` and `npm access list packages @piharness` themselves. Do not ask for a token, password, or OTP.
 5. Print the manual command, using the real directory:
 
 ```bash

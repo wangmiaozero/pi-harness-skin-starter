@@ -1,8 +1,8 @@
 import { lstat, readdir, readFile } from 'node:fs/promises'
 import path from 'node:path'
 
-export const MARKET_PACKAGE_NAME = /^@pi-harness\/(theme|pet)-[a-z0-9][a-z0-9-]*$/
-const PART_PACKAGE_NAME = /^@(?:pi-harness|example)\/(?:theme|pet)-[a-z0-9][a-z0-9-]*$/
+export const MARKET_PACKAGE_NAME = /^@piharness\/(theme|pet)-[a-z0-9][a-z0-9-]*$/
+const PART_PACKAGE_NAME = /^@(?:piharness|example)\/(?:theme|pet)-[a-z0-9][a-z0-9-]*$/
 const EXTENSIONS = new Set(['.webp', '.png', '.jpg', '.jpeg', '.mp4', '.mp3', '.json', '.md', '.txt'])
 const BARE = new Set(['license', 'notice', 'readme.md'])
 

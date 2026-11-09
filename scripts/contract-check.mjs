@@ -13,7 +13,7 @@ const required = [
   [theme, '/^#[0-9a-fA-F]{6}$/'],
   [pet, 'const MAX_CLIPS = 256'],
   [pet, 'const MAX_FRAMES_PER_CLIP = 1024'],
-  [names, String.raw`^@pi-harness\/(theme|pet)-[a-z0-9][a-z0-9-]*$`]
+  [names, String.raw`^@piharness\/(theme|pet)-[a-z0-9][a-z0-9-]*$`]
 ]
 const missing = required.filter(([source, needle]) => !source.includes(needle)).map(([, needle]) => needle)
 if (missing.length) throw new Error(`Protocol contract drifted: ${missing.join(', ')}`)

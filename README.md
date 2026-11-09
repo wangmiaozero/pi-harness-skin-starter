@@ -116,7 +116,7 @@ node scripts/create-pet.mjs my-pet --out ../my-pet
 node scripts/migrate-skin.mjs . ../theme-my-custom-skin
 ```
 
-`migrate-skin.mjs` reads the skin and writes a new directory. It does not change `pi-harness-skin.json`. The generated package name is `@example/theme-<id>`. `--official` changes the name to `@pi-harness/...` and does not grant publish permission. Market accepts only `^@pi-harness/(theme|pet)-[a-z0-9][a-z0-9-]*$`.
+`migrate-skin.mjs` reads the skin and writes a new directory. It does not change `pi-harness-skin.json`. The generated package name is `@example/theme-<id>`. `--official` changes the name to `@piharness/...` and does not grant publish permission. Market accepts only `^@piharness/(theme|pet)-[a-z0-9][a-z0-9-]*$`.
 
 Templates live in `templates/theme` and `templates/pet`. Skills live in `skills/`. Commands and the token limitation are documented in `docs/DEVELOPMENT.md` and `docs/MIGRATION.md`.
 
