@@ -1,0 +1,34 @@
+{
+  "formatVersion": 1,
+  "id": "split-pet",
+  "name": "split-pet",
+  "nameEn": "split-pet",
+  "author": "wangmiao",
+  "version": "1.0.0",
+  "license": "MIT",
+  "baseWidth": 64,
+  "baseHeight": 64,
+  "fps": 8,
+  "preview": "preview.webp",
+  "defaultAnimation": "idle",
+  "agentStateMapping": {
+    "idle": "idle",
+    "thinking": "idle",
+    "running": "wave",
+    "success": "wave"
+  },
+  "clips": {
+    "idle": {
+      "dir": "clips/idle",
+      "frames": 1,
+      "loop": true,
+      "frameDurationsMs": [80]
+    },
+    "wave": {
+      "dir": "clips/wave",
+      "frames": 1,
+      "loop": false,
+      "frameDurationsMs": [80]
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "@example/pet-split-pet",
+  "version": "1.0.0",
+  "private": false,
+  "description": "Example main pet package. The wave clip is in the part package.",
+  "license": "MIT",
+  "files": [
+    "pet-pack.json",
+    "preview.webp",
+    "clips",
+    "LICENSE",
+    "README.md"
+  ],
+  "piHarness": {
+    "kind": "pet",
+    "compatible": ">=2.4.0",
+    "parts": [
+      "@example/pet-split-pet-part"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

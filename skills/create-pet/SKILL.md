@@ -15,3 +15,4 @@ description: Create an independent Pi-Harness pet npm package. Use when the user
 8. Run `node scripts/validate-pack.mjs <directory>` and `node scripts/preview-pack.mjs <directory>`.
 9. Run `node scripts/pack-check.mjs <directory> --write --out <tarball-directory>`.
 10. Report the pet id, package name, frame count, and tarball. Do not run `npm publish`.
+11. Leave `piHarness.partOf` unset unless the user asked for a part package. A part package sets `partOf` to the main package name, omits `pet-pack.json`, and contains only its `clips/`. The main package lists that name in `piHarness.parts`. Copy the shape from `examples/split-pet` and `examples/split-pet-part`.

@@ -2,6 +2,7 @@ import { lstat, readdir, readFile } from 'node:fs/promises'
 import path from 'node:path'
 
 export const MARKET_PACKAGE_NAME = /^@pi-harness\/(theme|pet)-[a-z0-9][a-z0-9-]*$/
+const PART_PACKAGE_NAME = /^@(?:pi-harness|example)\/(?:theme|pet)-[a-z0-9][a-z0-9-]*$/
 const EXTENSIONS = new Set(['.webp', '.png', '.jpg', '.jpeg', '.mp4', '.mp3', '.json', '.md', '.txt'])
 const BARE = new Set(['license', 'notice', 'readme.md'])
 
@@ -19,7 +20,38 @@ export async function validatePackageJson(root) {
   }
   const text = JSON.stringify(pkg)
   if (text.includes('/Users/') || text.includes('C:\\')) throw new Error('package.json contains a local absolute path')
+  readHarness(pkg)
   return pkg
+}
+
+/** A package is a main package unless `piHarness.partOf` names its main package. */
+export function readHarness(pkg) {
+  const harness = pkg.piHarness
+  if (!harness || typeof harness !== 'object' || Array.isArray(harness)) {
+    return { parts: [], partOf: null }
+  }
+  const { parts, partOf } = harness
+  if (parts !== undefined && partOf !== undefined) {
+    throw new Error('piHarness.parts and piHarness.partOf cannot both be set')
+  }
+  if (partOf !== undefined) {
+    if (typeof partOf !== 'string' || !PART_PACKAGE_NAME.test(partOf) || partOf === pkg.name) {
+      throw new Error('piHarness.partOf must name the main theme or pet package')
+    }
+    return { parts: [], partOf }
+  }
+  if (parts !== undefined) {
+    if (!Array.isArray(parts) || parts.length < 1 || parts.length > 8) {
+      throw new Error('piHarness.parts must list 1 to 8 package names')
+    }
+    for (const name of parts) {
+      if (typeof name !== 'string' || !PART_PACKAGE_NAME.test(name) || name === pkg.name || parts.indexOf(name) !== parts.lastIndexOf(name)) {
+        throw new Error(`piHarness.parts entry is invalid: ${name}`)
+      }
+    }
+    return { parts, partOf: null }
+  }
+  return { parts: [], partOf: null }
 }
 
 export async function rejectUnsafeTree(root) {

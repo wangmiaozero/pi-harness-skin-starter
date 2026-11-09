@@ -17,4 +17,4 @@ npm publish --access public
 ```
 
 6. Do not execute `npm publish`, `npm login`, or any git push.
-7. Publishing `@pi-harness/pet-bigfish` is blocked while its tarball is about 469MB. The public registry rejects payloads around 200MB with HTTP 413.
+7. A package without `piHarness.partOf` is a main package. A part package must set `partOf` to the main package name, and the main package must list it in `piHarness.parts`. Tell the user to publish the main package and every part at the same version. Each tarball must stay under about 200MB; the public registry rejects a larger payload with HTTP 413. Do not tell the user to install a part by itself.
