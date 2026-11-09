@@ -103,3 +103,18 @@ assets/
 - 资源路径必须是相对路径，不能使用 `..`、绝对路径或指向项目外部的符号链接。
 - 不支持外部 CSS、JavaScript、SVG、HTML、字体和网络 URL。
 - Pi-Harness 只复制通过校验的清单与位图，不会执行皮肤项目中的代码。
+
+## 主题包与桌宠包
+
+仓库根目录继续使用 Skin Protocol v1。`pi-harness-skin.json` 和 `skin.schema.json` 仍通过「设置 → 主题 → 导入皮肤」导入。Theme Pack Protocol v1 不能保存完整颜色令牌，因此主题包不能替代这次导入。
+
+```bash
+node scripts/create-theme.mjs my-theme --out ../my-theme
+node scripts/create-pet.mjs my-pet --out ../my-pet
+node scripts/migrate-skin.mjs . ../theme-my-custom-skin
+```
+
+`migrate-skin.mjs` 只读取皮肤并写出新目录，不修改 `pi-harness-skin.json`。默认包名是 `@example/theme-<id>`。`--official` 只会把包名改成 `@pi-harness/...`，不会获得发布权限。Market 只接受完整匹配 `^@pi-harness/(theme|pet)-[a-z0-9][a-z0-9-]*$` 的包名。
+
+模板在 `templates/theme` 和 `templates/pet`，Skills 在 `skills/`。命令和令牌限制见 `docs/DEVELOPMENT.md`、`docs/MIGRATION.md`。
+

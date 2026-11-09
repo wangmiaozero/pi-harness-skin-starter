@@ -11,7 +11,7 @@
   <a href="README.de-DE.md">Deutsch</a>
 </p>
 
-Ce projet de skin autonome peut être confié à Codex ou Pi, puis importé directement dans [Pi-Harness](https://github.com/wangmiaozero/pi-harness).
+Ce projet de skin autonome peut être confié à Codex ou Pi, puis importé directement dans [Pi-Harness](https://github.com/wangmiaozero/pi-harness). L’import Skin Protocol v1 reste disponible. Les paquets npm Theme / Pet et la migration sont décrits dans [README.md](README.md).
 
 ## Démarrage rapide
 

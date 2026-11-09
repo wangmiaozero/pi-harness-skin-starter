@@ -1,0 +1,21 @@
+{
+  "name": "@example/pet-example",
+  "version": "1.0.0",
+  "private": false,
+  "description": "Pi-Harness pet pack example",
+  "license": "MIT",
+  "files": [
+    "pet-pack.json",
+    "preview.webp",
+    "clips",
+    "LICENSE",
+    "README.md"
+  ],
+  "piHarness": {
+    "kind": "pet",
+    "compatible": ">=2.4.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

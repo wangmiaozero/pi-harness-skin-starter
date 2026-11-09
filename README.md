@@ -103,3 +103,20 @@ See `skin.schema.json` for the complete field constraints. The `id` may contain 
 - Asset paths must be relative and cannot contain `..`, be absolute, or resolve through a symbolic link outside the project.
 - External CSS, JavaScript, SVG, HTML, fonts, and network URLs are not supported.
 - Pi-Harness copies only validated manifests and bitmap assets; it does not execute code from skin projects.
+
+## Theme and pet packs
+
+Skin Protocol v1 stays at this repository root. `pi-harness-skin.json` and `skin.schema.json` are still imported from **Settings → Theme → Import Skin**. Theme Pack Protocol v1 cannot store the full color-token map, so a theme package does not replace that import.
+
+Create an independent package:
+
+```bash
+node scripts/create-theme.mjs my-theme --out ../my-theme
+node scripts/create-pet.mjs my-pet --out ../my-pet
+node scripts/migrate-skin.mjs . ../theme-my-custom-skin
+```
+
+`migrate-skin.mjs` reads the skin and writes a new directory. It does not change `pi-harness-skin.json`. The generated package name is `@example/theme-<id>`. `--official` changes the name to `@pi-harness/...` and does not grant publish permission. Market accepts only `^@pi-harness/(theme|pet)-[a-z0-9][a-z0-9-]*$`.
+
+Templates live in `templates/theme` and `templates/pet`. Skills live in `skills/`. Commands and the token limitation are documented in `docs/DEVELOPMENT.md` and `docs/MIGRATION.md`.
+

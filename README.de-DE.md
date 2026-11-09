@@ -11,7 +11,7 @@
   <a href="README.de-DE.md">Deutsch</a>
 </p>
 
-Dieses eigenständige Skin-Projekt kann von Codex oder Pi erzeugt und anschließend direkt in [Pi-Harness](https://github.com/wangmiaozero/pi-harness) importiert werden.
+Dieses eigenständige Skin-Projekt kann von Codex oder Pi erzeugt und anschließend direkt in [Pi-Harness](https://github.com/wangmiaozero/pi-harness) importiert werden. Der Skin-Protocol-v1-Import bleibt erhalten. Theme- und Pet-npm-Pakete sowie die Migration stehen in [README.md](README.md).
 
 ## Schnellstart
 

@@ -1,12 +1,27 @@
-# Pi-Harness skin agent instructions
+# Skin Starter agent instructions
 
-- Only modify this skin project. Never edit the Pi-Harness application repository.
-- Keep `pi-harness-skin.json` compatible with `skin.schema.json` and `schemaVersion: 1`.
-- Use lowercase kebab-case for `id`; never change the id after users import the skin.
-- Assets must be local PNG, JPEG, or WebP files under `assets/`.
-- Do not add JavaScript, CSS, SVG, remote URLs, executable files, or embedded HTML.
-- Keep each image below 12 MiB. Prefer WebP for wallpapers and PNG/WebP for transparent portraits.
-- Wallpaper must keep application text readable behind translucent panels.
-- Portrait art must use transparent background and generous safe margins.
-- Preview should be 16:10 and accurately represent the final wallpaper, portrait, and color tokens.
-- Finish by validating every referenced asset path and summarizing manifest/token changes.
+This repository holds two compatible protocols. Do not collapse them into one package.
+
+## Skin Protocol v1
+
+- Keep the root `pi-harness-skin.json` compatible with `skin.schema.json` and `schemaVersion: 1`.
+- Never change `id` after a user has imported the skin.
+- Skin images belong under `assets/` and must be PNG, JPEG, or WebP, each below 12 MiB.
+- A skin directory that Pi-Harness imports must not contain JavaScript, CSS, SVG, remote URLs, or HTML.
+- Wallpaper text must stay readable. Portraits need a transparent background and safe margins.
+- Preview images are 16:10 and must match the skin.
+
+## Theme and pet packs
+
+- Create packs with `scripts/create-theme.mjs` and `scripts/create-pet.mjs`.
+- Those scripts, skills, and docs are starter tools. They are not imported as a skin.
+- Generated packs must stay valid under Theme Pack Protocol v1 or the existing pet-pack protocol.
+- Do not add npm scripts or executable files to a generated pack.
+- `@pi-harness` in a generated name does not grant Market publishing rights.
+- Migrate with `scripts/migrate-skin.mjs`. Leave the source `pi-harness-skin.json` in place.
+
+## Scope
+
+- Do not edit the Pi-Harness application repository from this project.
+- Do not publish npm, log in, or push git unless the user explicitly asks for that command.
+- Validate with `scripts/validate-pack.mjs` and `scripts/contract-check.mjs` before finishing a pack change.

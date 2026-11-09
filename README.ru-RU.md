@@ -11,7 +11,7 @@
   <a href="README.de-DE.md">Deutsch</a>
 </p>
 
-Это самостоятельный проект темы, который можно передать Codex или Pi для генерации, а затем напрямую импортировать в [Pi-Harness](https://github.com/wangmiaozero/pi-harness).
+Это самостоятельный проект темы, который можно передать Codex или Pi для генерации, а затем напрямую импортировать в [Pi-Harness](https://github.com/wangmiaozero/pi-harness). Импорт Skin Protocol v1 сохраняется. Пакеты npm Theme / Pet и миграция описаны в [README.md](README.md).
 
 ## Быстрый старт
 

@@ -1,0 +1,21 @@
+{
+  "name": "@example/theme-example",
+  "version": "1.0.0",
+  "private": false,
+  "description": "Pi-Harness theme pack example",
+  "license": "MIT",
+  "files": [
+    "theme-pack.json",
+    "preview.webp",
+    "assets",
+    "LICENSE",
+    "README.md"
+  ],
+  "piHarness": {
+    "kind": "theme",
+    "compatible": ">=2.4.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

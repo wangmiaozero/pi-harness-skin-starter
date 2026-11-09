@@ -11,7 +11,7 @@
   <a href="README.de-DE.md">Deutsch</a>
 </p>
 
-這是一個可交給 Codex 或 Pi 直接生成，完成後可匯入 [Pi-Harness](https://github.com/wangmiaozero/pi-harness) 的獨立皮膚專案。
+這是一個可交給 Codex 或 Pi 直接生成，完成後可匯入 [Pi-Harness](https://github.com/wangmiaozero/pi-harness) 的獨立皮膚專案。Skin Protocol v1 的導入方式保持不變。獨立的 Theme / Pet npm 包與遷移命令見 [README.md](README.md)。
 
 ## 快速開始
 

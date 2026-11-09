@@ -1,0 +1,27 @@
+{
+  "formatVersion": 1,
+  "id": "example",
+  "name": "example",
+  "version": "1.0.0",
+  "author": "wangmiao",
+  "description": "Pi-Harness theme pack example",
+  "license": "MIT",
+  "compatiblePiHarness": ">=2.4.0",
+  "preview": "preview.webp",
+  "variants": [
+    {
+      "id": "customTheme",
+      "skinId": "example",
+      "name": "example",
+      "appearance": "dark",
+      "portrait": true,
+      "accent": "#91a9c7",
+      "frameWidth": 1,
+      "frameHeight": 1,
+      "portraitAsset": "assets/portrait.webp",
+      "cssImages": {
+        "--market-scene-wallpaper": "assets/wallpaper.webp"
+      }
+    }
+  ]
+}

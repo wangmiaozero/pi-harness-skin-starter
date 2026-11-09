@@ -1,0 +1,54 @@
+{
+  "formatVersion": 1,
+  "id": "example",
+  "name": "example",
+  "nameEn": "example",
+  "author": "wangmiao",
+  "version": "1.0.0",
+  "license": "MIT",
+  "baseWidth": 64,
+  "baseHeight": 64,
+  "fps": 8,
+  "preview": "preview.webp",
+  "defaultAnimation": "idle",
+  "agentStateMapping": {
+    "idle": "idle",
+    "thinking": "thinking",
+    "running": "running",
+    "success": "success"
+  },
+  "clips": {
+    "idle": {
+      "dir": "clips/idle",
+      "frames": 1,
+      "loop": true,
+      "frameDurationsMs": [
+        80
+      ]
+    },
+    "thinking": {
+      "dir": "clips/thinking",
+      "frames": 1,
+      "loop": false,
+      "frameDurationsMs": [
+        80
+      ]
+    },
+    "running": {
+      "dir": "clips/running",
+      "frames": 1,
+      "loop": false,
+      "frameDurationsMs": [
+        80
+      ]
+    },
+    "success": {
+      "dir": "clips/success",
+      "frames": 1,
+      "loop": false,
+      "frameDurationsMs": [
+        80
+      ]
+    }
+  }
+}

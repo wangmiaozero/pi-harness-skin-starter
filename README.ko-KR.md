@@ -11,7 +11,7 @@
   <a href="README.de-DE.md">Deutsch</a>
 </p>
 
-Codex 또는 Pi로 생성한 뒤 [Pi-Harness](https://github.com/wangmiaozero/pi-harness)에 바로 가져올 수 있는 독립형 스킨 프로젝트입니다.
+Codex 또는 Pi로 생성한 뒤 [Pi-Harness](https://github.com/wangmiaozero/pi-harness)에 바로 가져올 수 있는 독립형 스킨 프로젝트입니다. Skin Protocol v1 가져오기는 그대로 유지됩니다. Theme / Pet npm 패키지와 마이그레이션은 [README.md](README.md)를 보십시오.
 
 ## 빠른 시작
 
