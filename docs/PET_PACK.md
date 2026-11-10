@@ -28,4 +28,4 @@ The main `pet-pack.json` lists only the clips that ship in the main package. A p
 
 `examples/split-pet` and `examples/split-pet-part` are the working example. Their names use `@example` so they are not official Market packages. A published pair uses `@piharness/pet-...` in `partOf`.
 
-Keep each published tarball under about 200MB. The public registry rejects a larger payload with HTTP 413. Publish the main package and each part on its own. A part does not have to share the main package version unless `parts` makes the main install download it.
+Keep each pack ZIP under 650 MiB compressed and 750 MiB unpacked. Publish the main package and each part as its own directory. A part does not have to share the main package version unless `parts` makes the main install download it.

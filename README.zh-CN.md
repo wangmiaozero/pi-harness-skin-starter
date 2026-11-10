@@ -114,7 +114,7 @@ node scripts/create-pet.mjs my-pet --out ../my-pet
 node scripts/migrate-skin.mjs . ../theme-my-custom-skin
 ```
 
-`migrate-skin.mjs` 只读取皮肤并写出新目录，不修改 `pi-harness-skin.json`。默认包名是 `@example/theme-<id>`。`--official` 只会把包名改成 `@piharness/...`，不会获得发布权限。Market 只接受完整匹配 `^@piharness/(theme|pet)-[a-z0-9][a-z0-9-]*$` 的包名。
+`migrate-skin.mjs` 只读取皮肤并写出新目录，不修改 `pi-harness-skin.json`。默认包名是 `@example/theme-<id>`。`--official` 只会把包名改成 `@piharness/...`，不会把它放进官方市场。官方资源要向 `wangmiaozero/pi-Harness-packages` 提交审核过的 pull request。Market 只接受完整匹配 `^@piharness/(theme|pet)-[a-z0-9][a-z0-9-]*$` 的包名。
 
 模板在 `templates/theme` 和 `templates/pet`，Skills 在 `skills/`。命令和令牌限制见 `docs/DEVELOPMENT.md`、`docs/MIGRATION.md`。
 

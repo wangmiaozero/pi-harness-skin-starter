@@ -14,8 +14,5 @@
     "kind": "pet",
     "compatible": ">=2.4.0",
     "partOf": "@example/pet-split-pet"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

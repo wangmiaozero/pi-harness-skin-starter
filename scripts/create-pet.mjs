@@ -49,8 +49,7 @@ await writeFile(
       description: `Pi-Harness pet pack ${slug}`,
       license: 'MIT',
       files: ['pet-pack.json', 'preview.webp', 'clips', 'LICENSE', 'README.md'],
-      piHarness: { kind: 'pet', compatible: '>=2.4.0' },
-      publishConfig: { access: 'public' }
+      piHarness: { kind: 'pet', compatible: '>=2.4.0' }
     },
     null,
     2
@@ -63,7 +62,7 @@ await writeFile(
 Independent pet pack using pet-pack.json. Frames are \`<clip>_001.webp\`.
 
 This package is ${official ? 'named for the official scope' : 'an example package and is not an official market package'}.
-Publishing under \`@piharness\` requires scope permission. The template does not grant it.
+An \`@piharness\` name does not list the pack. Official packs are added by a reviewed pull request to \`wangmiaozero/pi-Harness-packages\`.
 `
 )
 console.log(out)

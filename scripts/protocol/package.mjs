@@ -18,6 +18,7 @@ export async function validatePackageJson(root) {
   if (pkg.dependencies || pkg.devDependencies || pkg.optionalDependencies) {
     throw new Error('Resource packages cannot depend on other packages')
   }
+  if (pkg.publishConfig) throw new Error('Resource packages cannot contain publishConfig')
   const text = JSON.stringify(pkg)
   if (text.includes('/Users/') || text.includes('C:\\')) throw new Error('package.json contains a local absolute path')
   readHarness(pkg)

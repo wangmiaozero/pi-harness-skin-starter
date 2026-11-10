@@ -61,8 +61,7 @@ await writeFile(
       files: ['theme-pack.json', 'README.md', 'MIGRATION.md', 'LICENSE', 'assets'].concat(
         copied.preview === 'preview.webp' ? ['preview.webp'] : []
       ),
-      piHarness: { kind: 'theme', compatible: '>=2.4.0' },
-      publishConfig: { access: 'public' }
+      piHarness: { kind: 'theme', compatible: '>=2.4.0' }
     },
     null,
     2
