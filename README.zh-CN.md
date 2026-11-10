@@ -118,5 +118,5 @@ node scripts/migrate-skin.mjs . ../theme-my-custom-skin
 
 模板在 `templates/theme` 和 `templates/pet`，Skills 在 `skills/`。命令和令牌限制见 `docs/DEVELOPMENT.md`、`docs/MIGRATION.md`。
 
-没有 `piHarness.partOf` 的包是主包。子包把这个字段设成主包名。示例是 `examples/split-pet` 和 `examples/split-pet-part`。
+没有 `piHarness.partOf` 的包是主包。子包把这个字段设成主包名，带 `clip-pack.json`，可以单独安装。示例是 `examples/split-pet` 和 `examples/split-pet-part`。
 

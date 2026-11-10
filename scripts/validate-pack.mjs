@@ -51,13 +51,22 @@ async function validatePet(directory, allowMissingClipDirs) {
 }
 
 async function validatePartClips(directory) {
+  const pack = JSON.parse(await readFile(path.join(directory, 'clip-pack.json'), 'utf8'))
+  if (pack?.formatVersion !== 1 || !pack.clips || typeof pack.clips !== 'object' || Array.isArray(pack.clips)) {
+    throw new Error('A part package must include clip-pack.json')
+  }
   const clips = path.join(directory, 'clips')
   const entries = await readdir(clips, { withFileTypes: true }).catch(() => [])
   const clipDirs = entries.filter((entry) => entry.isDirectory())
-  if (!clipDirs.length) throw new Error('A part package must contain at least one clip directory')
-  for (const entry of clipDirs) {
-    if (!/^[\w][\w.-]*$/.test(entry.name)) throw new Error(`Unsafe clip directory: ${entry.name}`)
-    const relative = path.posix.join('clips', entry.name, frameFileName(entry.name, 0))
+  const declared = Object.keys(pack.clips)
+  if (!declared.length || declared.length !== clipDirs.length) {
+    throw new Error('clip-pack.json must list every clip directory')
+  }
+  for (const [name, clip] of Object.entries(pack.clips)) {
+    if (!/^[\w][\w.-]*$/.test(name) || clip?.dir !== `clips/${name}`) {
+      throw new Error(`Invalid clip-pack entry: ${name}`)
+    }
+    const relative = path.posix.join('clips', name, frameFileName(name, 0))
     const data = await assertInside(directory, relative)
     if (!isWebp(data)) throw new Error(`Frame is not WebP: ${relative}`)
   }

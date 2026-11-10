@@ -1,7 +1,7 @@
 # @example/pet-split-pet
 
-Main pet package. It has no `piHarness.partOf`, so Pi-Harness treats it as the package to install and show.
+Main pet package. It has no `piHarness.partOf`, so Pi-Harness installs it as its own pet.
 
-`piHarness.parts` names the child package. The `wave` clip is not in this directory. Installing this package downloads `@example/pet-split-pet-part` and merges `clips/wave` into the same pet. The pet id stays `split-pet`.
+The `wave` clip is not in this directory. It lives in `@example/pet-split-pet-part`. That package is listed separately. Installing it adds `clips/wave` to this pet. The pet id stays `split-pet`.
 
-This example uses `@example` names. A package published to the Market uses `@piharness/pet-...` in both `parts` and `partOf`. The template does not grant that scope.
+This example uses `@example` names. A package published to the Market uses `@piharness/pet-...` in `partOf`. The template does not grant that scope.

@@ -19,7 +19,7 @@ node scripts/migrate-skin.mjs . ../theme-my-custom-skin
 
 The generated theme pack copies the accent and bitmaps. The original skin remains the color-token import.
 
-`examples/split-pet` is a main pet package. `examples/split-pet-part` is its part package and sets `piHarness.partOf`. Validate each directory:
+`examples/split-pet` is a main pet package. `examples/split-pet-part` sets `piHarness.partOf` and can be installed on its own. Validate each directory:
 
 ```bash
 node scripts/validate-pack.mjs examples/split-pet

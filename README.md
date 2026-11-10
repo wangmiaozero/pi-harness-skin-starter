@@ -120,5 +120,5 @@ node scripts/migrate-skin.mjs . ../theme-my-custom-skin
 
 Templates live in `templates/theme` and `templates/pet`. Skills live in `skills/`. Commands and the token limitation are documented in `docs/DEVELOPMENT.md` and `docs/MIGRATION.md`.
 
-A package without `piHarness.partOf` is a main package. A part package sets that field to the main package name. The example is `examples/split-pet` and `examples/split-pet-part`.
+A package without `piHarness.partOf` is a main package. A part package sets that field to the main package name, ships `clip-pack.json`, and can be installed on its own. The example is `examples/split-pet` and `examples/split-pet-part`.
 

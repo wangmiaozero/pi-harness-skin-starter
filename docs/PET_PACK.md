@@ -10,19 +10,9 @@ The pack contains no JavaScript and no npm scripts.
 
 ## Main package and part packages
 
-A package is a main package when `package.json` has no `piHarness.partOf`. Pi-Harness lists and installs main packages. A part package sets `partOf` to the main package name. That field is the only marker. Package names are not special-cased.
+A package is a main package when `package.json` has no `piHarness.partOf`. A part package sets `partOf` to the main package name. That field is the only marker. Package names are not special-cased. Pi-Harness lists both, and a part can be downloaded on its own.
 
-The main package lists those part names in `piHarness.parts`. The two fields cannot both be set. Parts do not use npm `dependencies`.
-
-```json
-{
-  "piHarness": {
-    "kind": "pet",
-    "compatible": ">=2.4.0",
-    "parts": ["@piharness/pet-companion-part"]
-  }
-}
-```
+`piHarness.parts` is optional. When the main package lists part names there, installing the main package also downloads those parts. Leave `parts` unset when each part should be a separate download. The two fields cannot both be set. Parts do not use npm `dependencies`. A main package can list at most 8 parts.
 
 ```json
 {
@@ -34,8 +24,8 @@ The main package lists those part names in `piHarness.parts`. The two fields can
 }
 ```
 
-The main `pet-pack.json` lists every clip, including clips that ship in a part. A part directory contains `clips/` and does not contain `pet-pack.json`. Installing the main package downloads each part and copies those clip directories into the same pet. The pet id does not change. The Market does not show a part package.
+The main `pet-pack.json` lists only the clips that ship in the main package. A part contains `clips/` and `clip-pack.json`, and does not contain `pet-pack.json`. `clip-pack.json` uses the same clip objects as `pet-pack.json`. Installing the part copies those clips into the installed main pet and adds them to that pet's manifest. If the main pet is not installed yet, Pi-Harness installs the main package first. The pet id does not change. Uninstalling the part removes only its clips.
 
-`examples/split-pet` and `examples/split-pet-part` are the working example. Their names use `@example` so they are not official Market packages. A published pair uses `@piharness/pet-...` in `parts` and `partOf`.
+`examples/split-pet` and `examples/split-pet-part` are the working example. Their names use `@example` so they are not official Market packages. A published pair uses `@piharness/pet-...` in `partOf`.
 
-Keep each published tarball under about 200MB. The public registry rejects a larger payload with HTTP 413. Publish the main package and its parts at the same version.
+Keep each published tarball under about 200MB. The public registry rejects a larger payload with HTTP 413. Publish the main package and each part on its own. A part does not have to share the main package version unless `parts` makes the main install download it.

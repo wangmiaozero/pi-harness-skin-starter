@@ -5,6 +5,7 @@
   "description": "Example part package for @example/pet-split-pet.",
   "license": "MIT",
   "files": [
+    "clip-pack.json",
     "clips",
     "LICENSE",
     "README.md"

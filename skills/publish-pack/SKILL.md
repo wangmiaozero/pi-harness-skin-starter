@@ -17,4 +17,4 @@ npm publish --access public
 ```
 
 6. Do not execute `npm publish`, `npm login`, or any git push.
-7. A package without `piHarness.partOf` is a main package. A part package must set `partOf` to the main package name, and the main package must list it in `piHarness.parts`. Tell the user to publish the main package and every part at the same version. Each tarball must stay under about 200MB; the public registry rejects a larger payload with HTTP 413. Do not tell the user to install a part by itself.
+7. A package without `piHarness.partOf` is a main package. A part package sets `partOf` to the main package name and includes `clip-pack.json`. Tell the user each part can be published and installed on its own. Each tarball must stay under about 200MB; the public registry rejects a larger payload with HTTP 413. If the main package lists `piHarness.parts`, those parts must be published at the same version before the main package is installed.

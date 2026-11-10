@@ -23,4 +23,4 @@ npm publish --access public
 
 Do not run that command from this starter repository. Do not add install scripts. A published name is not reusable as a different package, and versions older than 72 hours cannot be removed.
 
-A part package has `piHarness.partOf`. Publish it separately, at the same version as its main package, and keep each tarball under about 200MB. Pi-Harness installs the main package and merges the parts. See `docs/PET_PACK.md` and `examples/split-pet`.
+A part package has `piHarness.partOf` and `clip-pack.json`. Publish it separately and keep each tarball under about 200MB. Pi-Harness shows it in the Market. Installing it merges those clips into the main pet. See `docs/PET_PACK.md` and `examples/split-pet`.
